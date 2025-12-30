@@ -30,19 +30,39 @@
     color: var(--primary);
   }
   
-  .card {
-    background: white;
-    color: black;
-    border-radius: 16px;
+/* Card lista titoli */
+.list-card {
+    background-color: #000;       /* sfondo nero */
+    color: #fff;                  /* testo bianco */
+    font-weight: bold;            /* grassetto */
+    max-height: 60vh;             /* altezza massima */
+    overflow-y: auto;             /* abilita lo scroll verticale */
     padding: 16px;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
   
-  .list-card {
-    max-height: 60vh;
-    overflow-y: auto;
+  /* Nascondere la scrollbar in tutti i browser moderni */
+  .list-card::-webkit-scrollbar {
+    width: 0px;  /* Chrome, Safari e Opera */
   }
   
+  .list-card {
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  /* Stile dei singoli titoli */
+  .list-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* linea sottile per separare */
+    cursor: pointer;
+  }
+  
+  .list-card li:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
   ul {
     list-style: none;
     padding: 0;
